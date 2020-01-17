@@ -11,6 +11,7 @@ import {User} from '../users/User';
 export class UserDetailComponent implements OnInit {
   userId: string;
   user: User;
+  userNotFound = false;
 
   constructor(
     private userService: UsersService,
@@ -18,9 +19,17 @@ export class UserDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.route.toString());
     this.route.paramMap.subscribe(params => {
       this.userId = params.get('userId');
-      this.userService.GetOneUser(this.userId).subscribe(user => this.user = user);
+      this.userService.GetOneUser(this.userId).subscribe(
+        user => this.user = user,
+        error => {
+          console.log(error);
+          if (error.status === 404) {
+            this.userNotFound = true;
+          }
+        });
     });
   }
 }
