@@ -4,5 +4,4 @@ export class User {
   username: string;
   email: string;
   address: any;
-  geo: any;
 }

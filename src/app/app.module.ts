@@ -16,7 +16,9 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(
       [
-        {path: 'users', component: UsersComponent}]),
+        {path: 'users', component: UsersComponent},
+        {path: 'user/:userId', component: UserDetailComponent}
+        ]),
     BrowserModule
   ],
   providers: [HttpClientModule],
