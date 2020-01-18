@@ -7,6 +7,8 @@
     <span id="name"><b>name: </b>{{ user.name }}</span><br>
     <span id="username"><b>username: </b>{{ user.username }}</span><br>
     <span id="email"><b>email: </b>{{ user.email }}</span><br>
+    <span id="phone"><b>phone: </b>{{ user.phone }}</span><br>
+    <span id="website"><b>website: </b>{{ user.website }}</span><br>
     <span id="address"><b>address: </b></span><br>
     <ul>
       <li><span id="street"><b>street: </b>{{ user.address.street }}</span></li>
@@ -19,6 +21,13 @@
       lat: {{ user.address.geo.lat }}<br>
       lng: {{ user.address.geo.lng }}<br>
     </div>
+
+    <span id="company"><b>company: </b></span><br>
+    <ul>
+      <li><span id="company_name"><b>company_name: </b>{{ user.company.name }}</span></li>
+      <li><span id="company_catchPhrase"><b>catchPhrase: </b>{{ user.company.catchPhrase }}</span></li>
+      <li><span id="company_bs"><b>bs: </b>{{ user.company.bs }}</span></li>
+    </ul>
   </div>
 </div>
 
