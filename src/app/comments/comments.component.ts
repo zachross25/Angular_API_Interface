@@ -9,7 +9,7 @@ import { Comment } from '../objects/comment';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  @Input() postId: string;
+  @Input() postId: number;
   comments: Comment[] = [];
 
   constructor(
@@ -18,7 +18,7 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.commS.GetComments(this.postId).subscribe(comments => this.comments =  comments);
+    this.commS.GetComments(String(this.postId)).subscribe(comments => this.comments =  comments);
   }
 
 }

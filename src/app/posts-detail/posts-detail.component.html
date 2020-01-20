@@ -3,7 +3,10 @@
   <p>{{ post.body}}</p>
   user: <b *ngIf="!user">loading...</b>
   <b *ngIf="user">{{ user.name }}</b>
-
-  <h2>Comments: </h2>
+</div>
+<br>
+<div class="comments">
+  <h4>Comments: </h4>
   <app-comments [postId]="post.id"></app-comments>
 </div>
+
