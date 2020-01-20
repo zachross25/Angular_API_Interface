@@ -1,0 +1,9 @@
+<h2>Posts list</h2>
+<ul>
+  <b *ngIf="posts.length==0">loading...</b>
+  <li *ngFor="let post of posts">
+    <a [routerLink]="['/posts', post.id]" >{{ post.title}}</a>
+    <p>{{ post.body }}</p>
+    <hr>
+  </li>
+</ul>

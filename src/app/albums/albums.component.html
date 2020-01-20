@@ -1,0 +1,6 @@
+<b *ngIf="albums.length==0">loading...</b>
+<ul *ngFor="let album of albums">
+  <li>
+    <a [routerLink]="['/albums', album.id]">{{ album.title }}</a>
+  </li>
+</ul>

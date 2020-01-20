@@ -1,0 +1,10 @@
+<b *ngIf="photos.length==0">loading...</b>
+
+<div *ngFor="let photo of photos">
+  <div class="photo_title">
+    {{ photo.title }}
+  </div>
+  <div class="photo_image">
+    <a href="{{ photo.url }}"><img src="{{ photo.thumbnailUrl }}" /></a>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<b *ngIf="!album"> loading:</b>
+<div class="album" *ngIf="album">
+  <h1>{{ album.title }}</h1>
+  <app-photo [albumId]="album.id"></app-photo>
+</div>
+
+
