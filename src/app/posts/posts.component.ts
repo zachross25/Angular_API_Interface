@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PostsService} from '../services/posts.service';
 import {Post} from '../objects/post';
 
@@ -8,12 +8,15 @@ import {Post} from '../objects/post';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  @Input() userId: number;
+  @Input() userName: string;
+
   posts: Post[] = [];
   constructor(
     private postS: PostsService
   ) { }
 
   ngOnInit() {
-    this.postS.GetPosts().subscribe(posts => this.posts = posts);
+    this.postS.GetPosts(String(this.userId)).subscribe(posts => this.posts = posts);
   }
 }

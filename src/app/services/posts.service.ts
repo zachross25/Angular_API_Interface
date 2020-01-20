@@ -11,8 +11,13 @@ export class PostsService {
   constructor(
     private http: HttpClient
   ) { }
-  GetPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.APIUrl + '/posts');
+  GetPosts(userId: any): Observable<Post[]> {
+    if (userId === 'undefined') {
+      return this.http.get<Post[]>(this.APIUrl + '/posts');
+    } else {
+      return this.http.get<Post[]>(this.APIUrl + '/posts?userId=' +  userId);
+    }
+
   }
   GetPost(id: string): Observable<Post> {
     return this.http.get<Post>(this.APIUrl + '/posts' + '/' + id);

@@ -4,7 +4,7 @@
   </div>
   <b *ngIf="!user">loading...</b>
   <div class="user_profile" *ngIf="user">
-    <h2>{{ user.name }} User Profile</h2>
+    <h2>{{ user.name }}</h2>
     <span id="name"><b>name: </b>{{ user.name }}</span><br>
     <span id="username"><b>username: </b>{{ user.username }}</span><br>
     <span id="email"><b>email: </b>{{ user.email }}</span><br>
@@ -29,6 +29,12 @@
       <li><span id="company_catchPhrase"><b>catchPhrase: </b>{{ user.company.catchPhrase }}</span></li>
       <li><span id="company_bs"><b>bs: </b>{{ user.company.bs }}</span></li>
     </ul>
+
+    <div class="row">
+      <div class="col lg-6"><app-albums [userId]="user.id" [userName]="user.name"></app-albums></div>
+      <div class="col lg-6"><app-posts [userId]="user.id" [userName]="user.name"></app-posts></div>
+    </div>
+
   </div>
 </div>
 

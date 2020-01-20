@@ -1,4 +1,4 @@
-<h2>Users</h2>
+<h3>Users list</h3>
 <b *ngIf="users.length==0">loading...</b>
 <ul>
   <li *ngFor="let user of users"><a [routerLink]="['/user', user.id]">{{ user.name }}</a></li>

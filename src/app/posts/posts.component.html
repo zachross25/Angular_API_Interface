@@ -1,4 +1,4 @@
-<h2>Posts list</h2>
+<h4>Posts list <span *ngIf="userId">of user <b>{{ userName }}</b></span> ({{ posts.length }})</h4>
 <b *ngIf="posts.length==0">loading...</b>
 <ul>
   <li *ngFor="let post of posts">

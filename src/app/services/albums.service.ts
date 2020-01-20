@@ -14,8 +14,14 @@ export class AlbumsService {
     private http: HttpClient
   ) { }
 
-  GetAlbums(): Observable<Album[]> {
-    return this.http.get<Album[]>(this.APIUrl + '/albums');
+  GetAlbums(userId: any): Observable<Album[]> {
+    console.log('userId: ' + userId);
+    if (userId === 'undefined') {
+      return this.http.get<Album[]>(this.APIUrl + '/albums');
+
+    } else {
+      return this.http.get<Album[]>(this.APIUrl + '/albums?userId=' + userId);
+    }
   }
   GetAlbum(albumId: string): Observable<Album> {
     return this.http.get<Album>(this.APIUrl + '/albums/' + albumId);

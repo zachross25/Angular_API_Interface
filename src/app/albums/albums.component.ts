@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AlbumsService} from '../services/albums.service';
 import {Album} from '../objects/album';
 
@@ -8,13 +8,16 @@ import {Album} from '../objects/album';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
+  @Input() userId: number;
+  @Input() userName: string;
+
   albums: Album[] = [];
   constructor(
     private albumS: AlbumsService
   ) { }
 
   ngOnInit() {
-    this.albumS.GetAlbums().subscribe(albums => this.albums = albums);
+    this.albumS.GetAlbums(String(this.userId)).subscribe(albums => this.albums = albums);
   }
 
 }

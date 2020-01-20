@@ -1,3 +1,4 @@
+<h4>Albums list <span *ngIf="userId">for user <b>{{ userName }}</b></span> ({{ albums.length }})</h4>:
 <b *ngIf="albums.length==0">loading...</b>
 <ul *ngFor="let album of albums">
   <li>
