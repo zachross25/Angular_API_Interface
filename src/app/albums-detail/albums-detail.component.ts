@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Photo} from '../objects/photo';
 import {Album} from '../objects/album';
-import {HttpClient} from '@angular/common/http';
 import {AlbumsService} from '../services/albums.service';
 import {ActivatedRoute} from '@angular/router';
 

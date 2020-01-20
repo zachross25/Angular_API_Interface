@@ -8,7 +8,7 @@ import {Photo} from '../objects/photo';
   styleUrls: ['./photo.component.css']
 })
 export class PhotoComponent implements OnInit {
-  @Input() albumId: string;
+  @Input() albumId: number;
   photos: Photo[] = [];
 
   constructor(
@@ -16,7 +16,7 @@ export class PhotoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.albumS.GetPhotos(this.albumId).subscribe(photos => this.photos = photos);
+    this.albumS.GetPhotos(String(this.albumId)).subscribe(photos => this.photos = photos);
   }
 
 }
