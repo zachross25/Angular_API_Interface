@@ -5,19 +5,36 @@ import { UsersComponent } from './users/users.component';
 import {RouterModule} from '@angular/router';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
+import { CommentsComponent } from './comments/comments.component';
+import { PostsDetailComponent } from './posts-detail/posts-detail.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { PhotoComponent } from './photo/photo.component';
+import { AlbumsDetailComponent } from './albums-detail/albums-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    PostsComponent,
+    CommentsComponent,
+    PostsDetailComponent,
+    AlbumsComponent,
+    PhotoComponent,
+    AlbumsDetailComponent
   ],
   imports: [
     HttpClientModule,
     RouterModule.forRoot(
       [
         {path: 'users', component: UsersComponent},
-        {path: 'user/:userId', component: UserDetailComponent}
+        {path: 'user/:userId', component: UserDetailComponent},
+        {path: 'posts', component: PostsComponent},
+        {path: 'posts/:postId', component: PostsDetailComponent},
+        { path: 'albums', component: AlbumsComponent},
+       // { path: 'albums/:userId', component: AlbumsComponent},
+        { path: 'albums/:albumId', component: AlbumsDetailComponent},
         ]),
     BrowserModule
   ],

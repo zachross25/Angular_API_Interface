@@ -2,6 +2,7 @@
   <div class="error">
     <div id="userNotFound" *ngIf="userNotFound"><h3 style="color: rosybrown">user with ID: {{ userId }} not found</h3></div>
   </div>
+  <b *ngIf="!user">loading...</b>
   <div class="user_profile" *ngIf="user">
     <h2>{{ user.name }} User Profile</h2>
     <span id="name"><b>name: </b>{{ user.name }}</span><br>
