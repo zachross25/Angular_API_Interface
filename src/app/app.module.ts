@@ -11,6 +11,7 @@ import { PostsDetailComponent } from './posts-detail/posts-detail.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotoComponent } from './photo/photo.component';
 import { AlbumsDetailComponent } from './albums-detail/albums-detail.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,14 @@ import { AlbumsDetailComponent } from './albums-detail/albums-detail.component';
     PostsDetailComponent,
     AlbumsComponent,
     PhotoComponent,
-    AlbumsDetailComponent
+    AlbumsDetailComponent,
+    IndexComponent
   ],
   imports: [
     HttpClientModule,
     RouterModule.forRoot(
       [
+        { path: '', component: IndexComponent},
         {path: 'users', component: UsersComponent},
         {path: 'user/:userId', component: UserDetailComponent},
         {path: 'posts', component: PostsComponent},
