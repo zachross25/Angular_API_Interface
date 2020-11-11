@@ -1,6 +1,6 @@
 <b *ngIf="comments.length==0">loading...</b>
 <li *ngFor="let comment of comments">
-  <b>{{ comment.name }} <a href="mailto:{{ comment.email }}">{{ comment.email }}</a></b>
+  <b><a href="mailto:{{ comment.email }}">{{ comment.email }}:</a> {{ comment.name }}</b>
   <p>{{ comment.body }}</p>
 </li>
 
