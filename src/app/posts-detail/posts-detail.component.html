@@ -2,8 +2,8 @@
 <div class="post" *ngIf="post">
   <h2>{{ post.title }}</h2>
   <p>{{ post.body}}</p>
-  user: <b *ngIf="!user">loading...</b>
-  <b *ngIf="user">{{ user.name }}</b>
+  author: <b *ngIf="!user">loading...</b>
+  <b *ngIf="user"><a [routerLink]="['/user', user.id]">{{ user.name }}</a></b>
 </div>
 <br>
 <div class="comments">
