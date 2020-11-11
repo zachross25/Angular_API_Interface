@@ -18,7 +18,11 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.commS.GetComments(String(this.postId)).subscribe(comments => this.comments =  comments);
+    const commentsSubscription = this.commS.GetComments(String(this.postId)).
+      subscribe(comments => {
+        this.comments =  comments;
+        commentsSubscription.unsubscribe();
+      });
   }
 
 }
