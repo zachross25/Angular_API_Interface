@@ -22,12 +22,14 @@ export class UserDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.route.toString());
-    this.route.paramMap.subscribe(params => {
+    const s1 = this.route.paramMap.subscribe(params => {
       this.userId = params.get('userId');
-      this.userService.GetOneUser(this.userId).subscribe(
+
+      const s2 = this.userService.GetOneUser(this.userId).subscribe(
         user => {
           this.user = user;
+          s2.unsubscribe();
+          s1.unsubscribe();
         },
         error => {
           console.log(error);
@@ -35,6 +37,7 @@ export class UserDetailComponent implements OnInit {
             this.userNotFound = true;
           }
         });
-    });
+
+   });
   }
 }

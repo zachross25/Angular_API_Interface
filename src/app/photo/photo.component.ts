@@ -16,7 +16,10 @@ export class PhotoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.albumS.GetPhotos(String(this.albumId)).subscribe(photos => this.photos = photos);
+    const sub = this.albumS.GetPhotos(String(this.albumId)).subscribe(photos => {
+      this.photos = photos;
+      sub.unsubscribe();
+    });
   }
 
 }

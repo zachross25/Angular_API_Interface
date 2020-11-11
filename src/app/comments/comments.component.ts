@@ -24,5 +24,4 @@ export class CommentsComponent implements OnInit {
         commentsSubscription.unsubscribe();
       });
   }
-
 }

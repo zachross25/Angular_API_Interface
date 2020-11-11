@@ -17,9 +17,10 @@ export class AlbumsDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    const sub = this.route.paramMap.subscribe(params => {
       this.albumS.GetAlbum(params.get('albumId')).subscribe(album => {
         this.album = album;
+        sub.unsubscribe();
       });
     });
 

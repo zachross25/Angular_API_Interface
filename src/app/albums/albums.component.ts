@@ -17,7 +17,10 @@ export class AlbumsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.albumS.GetAlbums(String(this.userId)).subscribe(albums => this.albums = albums);
+    const sub = this.albumS.GetAlbums(String(this.userId)).subscribe(albums => {
+      this.albums = albums;
+      sub.unsubscribe();
+    });
   }
 
 }

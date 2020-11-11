@@ -17,6 +17,10 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.postS.GetPosts(String(this.userId)).subscribe(posts => this.posts = posts);
+    const postSubscription = this.postS.GetPosts(String(this.userId))
+      .subscribe(posts => {
+        this.posts = posts;
+        postSubscription.unsubscribe();
+      });
   }
 }

@@ -21,10 +21,11 @@ export class PostsDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    const sub = this.route.paramMap.subscribe(params => {
       this.postS.GetPost(params.get('postId')).subscribe(post => {
         this.post = post;
         this.userS.GetOneUser(String(post.userId)).subscribe(user => this.user = user);
+        sub.unsubscribe();
       });
     });
   }
