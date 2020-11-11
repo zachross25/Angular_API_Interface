@@ -4,9 +4,10 @@
   <p>{{ post.body}}</p>
   author: <b *ngIf="!user">loading...</b>
   <b *ngIf="user"><a [routerLink]="['/user', user.id]">{{ user.name }}</a></b>
+
+  <div class="comments">
+    <h4>Comments: </h4>
+    <app-comments [postId]="post.id"></app-comments>
+  </div>
 </div>
-<br>
-<div class="comments">
-  <h4>Comments: </h4>
-  <app-comments [postId]="post.id"></app-comments>
-</div>
+
