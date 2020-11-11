@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'app-albums-detail',
   templateUrl: './albums-detail.component.html',
   styleUrls: ['./albums-detail.component.css'],
-  providers: [ NgOnDestroy ]
+  providers: [ NgOnDestroy ],
 })
 export class AlbumsDetailComponent implements OnInit {
   album: Album;
@@ -25,7 +25,6 @@ export class AlbumsDetailComponent implements OnInit {
       .pipe(takeUntil(this.ngOnDestroy$))
       .subscribe(params => {
       this.albumS.GetAlbum(params.get('albumId'))
-        .pipe(takeUntil(this.ngOnDestroy$))
         .subscribe(album => {
         this.album = album;
       });

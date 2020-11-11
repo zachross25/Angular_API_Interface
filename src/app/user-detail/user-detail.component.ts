@@ -29,18 +29,16 @@ export class UserDetailComponent implements OnInit {
     this.route.paramMap
       .pipe(takeUntil(this.ngOnDestroy$))
       .subscribe(params => {
-      this.userId = params.get('userId');
-
-      this.userService.GetOneUser(this.userId)
-        .pipe(takeUntil(this.ngOnDestroy$))
+        this.userId = params.get('userId');
+        this.userService.GetOneUser(this.userId)
         .subscribe(
-        user => {
-          this.user = user;
-        },
-        error => {
-          if (error.status === 404) {
-            this.userNotFound = true;
-          }
+          user => {
+            this.user = user;
+          },
+          error => {
+            if (error.status === 404) {
+              this.userNotFound = true;
+            }
         });
    });
   }

@@ -29,10 +29,10 @@ export class PostsDetailComponent implements OnInit {
       .pipe(takeUntil(this.ngOnDestroy$))
       .subscribe(params => {
       this.postS.GetPost(params.get('postId'))
-        .pipe(takeUntil(this.ngOnDestroy$))
         .subscribe(post => {
           this.post = post;
-          this.userS.GetOneUser(String(post.userId)).subscribe(user => this.user = user);
+          this.userS.GetOneUser(String(post.userId))
+            .subscribe(user => this.user = user);
       });
     });
   }
