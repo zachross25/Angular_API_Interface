@@ -1,26 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Self} from '@angular/core';
 import {Album} from '../objects/album';
 import {AlbumsService} from '../services/albums.service';
 import {ActivatedRoute} from '@angular/router';
+import { NgOnDestroy } from '../ngondestroy';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-albums-detail',
   templateUrl: './albums-detail.component.html',
-  styleUrls: ['./albums-detail.component.css']
+  styleUrls: ['./albums-detail.component.css'],
+  providers: [ NgOnDestroy ]
 })
 export class AlbumsDetailComponent implements OnInit {
   album: Album;
 
-  constructor(
-    private route: ActivatedRoute,
-    private albumS: AlbumsService
+  constructor(@Self()
+              private ngOnDestroy$: NgOnDestroy,
+              private route: ActivatedRoute,
+              private albumS: AlbumsService
   ) { }
 
   ngOnInit() {
-    const sub = this.route.paramMap.subscribe(params => {
-      this.albumS.GetAlbum(params.get('albumId')).subscribe(album => {
+    this.route.paramMap
+      .pipe(takeUntil(this.ngOnDestroy$))
+      .subscribe(params => {
+      this.albumS.GetAlbum(params.get('albumId'))
+        .pipe(takeUntil(this.ngOnDestroy$))
+        .subscribe(album => {
         this.album = album;
-        sub.unsubscribe();
       });
     });
 
