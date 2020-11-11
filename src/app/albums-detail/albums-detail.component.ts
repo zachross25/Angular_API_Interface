@@ -1,7 +1,7 @@
-import {Component, OnInit, Self} from '@angular/core';
-import {Album} from '../objects/album';
-import {AlbumsService} from '../services/albums.service';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit, Self } from '@angular/core';
+import { Album } from '../objects/album';
+import { AlbumsService } from '../services/albums.service';
+import { ActivatedRoute } from '@angular/router';
 import { NgOnDestroy } from '../ngondestroy';
 import { takeUntil } from 'rxjs/operators';
 

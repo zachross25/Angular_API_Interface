@@ -1,9 +1,9 @@
-import {Component, Input, OnInit, Self} from '@angular/core';
-import {CommentsService} from '../services/comments.service';
-import {ActivatedRoute} from '@angular/router';
+import { Component, Input, OnInit, Self } from '@angular/core';
+import { CommentsService } from '../services/comments.service';
+import { ActivatedRoute } from '@angular/router';
 import { Comment } from '../objects/comment';
-import {NgOnDestroy} from '../ngondestroy';
-import {takeUntil} from 'rxjs/operators';
+import { NgOnDestroy } from '../ngondestroy';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-comments',

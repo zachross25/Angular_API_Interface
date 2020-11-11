@@ -1,8 +1,8 @@
-import {Component, Input, OnInit, Self} from '@angular/core';
-import {AlbumsService} from '../services/albums.service';
-import {Photo} from '../objects/photo';
-import {NgOnDestroy} from '../ngondestroy';
-import {takeUntil} from 'rxjs/operators';
+import { Component, Input, OnInit, Self } from '@angular/core';
+import { AlbumsService } from '../services/albums.service';
+import { Photo } from '../objects/photo';
+import { NgOnDestroy } from '../ngondestroy';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-photo',

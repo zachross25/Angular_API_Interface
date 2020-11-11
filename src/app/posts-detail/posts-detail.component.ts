@@ -1,11 +1,11 @@
-import {Component, OnInit, Self} from '@angular/core';
-import {PostsService} from '../services/posts.service';
-import {Post} from '../objects/post';
-import {ActivatedRoute} from '@angular/router';
-import {UsersService} from '../services/users.service';
-import {User} from '../users/User';
-import {NgOnDestroy} from '../ngondestroy';
-import {take, takeUntil} from 'rxjs/operators';
+import { Component, OnInit, Self } from '@angular/core';
+import { PostsService } from '../services/posts.service';
+import { Post } from '../objects/post';
+import { ActivatedRoute } from '@angular/router';
+import { UsersService } from '../services/users.service';
+import { User } from '../users/User';
+import { NgOnDestroy } from '../ngondestroy';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posts-detail',

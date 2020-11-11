@@ -1,8 +1,8 @@
-import {Component, Input, OnInit, Self} from '@angular/core';
-import {PostsService} from '../services/posts.service';
-import {Post} from '../objects/post';
-import {NgOnDestroy} from '../ngondestroy';
-import {take, takeUntil} from 'rxjs/operators';
+import { Component, Input, OnInit, Self } from '@angular/core';
+import { PostsService } from '../services/posts.service';
+import { Post } from '../objects/post';
+import { NgOnDestroy } from '../ngondestroy';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posts',

@@ -1,9 +1,9 @@
-import {Component, OnInit, Self} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {UsersService} from '../services/users.service';
-import {User} from '../users/User';
-import {AlbumsService} from '../services/albums.service';
-import {NgOnDestroy} from '../ngondestroy';
+import { Component, OnInit, Self } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UsersService } from '../services/users.service';
+import { User } from '../users/User';
+import { AlbumsService } from '../services/albums.service';
+import { NgOnDestroy } from '../ngondestroy';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
